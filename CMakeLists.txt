@@ -7,6 +7,9 @@ set(SOURCE_FILES
     obj/Obj.h
     uro/Disk.h
     uro/Uroboros.h
+    dna/Molecule.h
+    dna/Atom.h
+    util/Byte.h
     main.cpp)
 
 add_executable(Uroboros ${SOURCE_FILES})

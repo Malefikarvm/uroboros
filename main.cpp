@@ -1,8 +1,9 @@
 #include <cstdlib>
 #include <iostream>
-#include <bitset>
-#include "uro/Disk.h"
-#include "obj/Obj.h"
+//#include "util/Byte.h"
+//#include "uro/Disk.h"
+//#include "obj/Obj.h"
+#include "dna/Atom.h"
 
 using namespace std;
 
@@ -11,9 +12,18 @@ int main(int argc, char *argv[]){
     disk = new Disk<char>();
     disk->setValue('L');
     cout<<disk->getValue()<<endl;*/
-    typedef bitset<8> byte;
-    byte a = ~27;
-    cout << a.to_ulong() << ' ' << a << endl;
+    /*typedef bitset<8> byte;
+    byte a = ~27;*/
+    /*Byte *b;
+    b->setByte(27);
+    cout << b->getNum()<< ' ' << b->getByte() << endl;*/
+    int vals[] = {27, ~27, 12};
+    const int size = sizeof(vals) / sizeof(*vals);
+    Atom<size> a(vals);
+    cout << size << endl;
+    for (int i = 0; i < size; i++) {
+        cout << a[i] << endl;
+    }
     /*int x = 2;
     Obj *y = (Obj *) &x;
     Obj *a = new Obj(y);
